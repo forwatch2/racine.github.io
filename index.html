@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="CV de recherche de stage en réseaux informatiques">
+    <meta name="author" content="RACINE">
+
+    <title>CV | RACINE Naël - Réseaux Informatiques</title>
+
+    <style>
+        /* =========================
+           RESET
+        ========================= */
+        /* =========================
+   COMPETENCES
+========================= */
+
+.competences-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.competence-card {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px;
+    box-shadow: var(--shadow);
+    transition: 0.3s ease;
+}
+
+.competence-card:hover {
+    transform: translateY(-5px);
+    border-color: #bfdbfe;
+}
+
+.competence-card h3 {
+    color: var(--dark);
+    font-size: 19px;
+    margin-bottom: 18px;
+}
+
+.competence-card ul {
+    list-style: none;
+}
+
+.competence-card li {
+    position: relative;
+    padding: 8px 0 8px 22px;
+    color: #64748b;
+    font-size: 14px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.competence-card li:last-child {
+    border-bottom: none;
+}
+
+.competence-card li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+
+    .competences-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f7fb;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* =========================
+           VARIABLES
+        ========================= */
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --dark: #0f172a;
+            --text: #334155;
+            --light: #f8fafc;
+            --white: #ffffff;
+            --border: #e2e8f0;
+            --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1150px;
+            margin: auto;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text);
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .menu-btn {
+            display: none;
+            border: none;
+            background: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: var(--dark);
+        }
+
+        /* =========================
+           GENERAL
+        ========================= */
+        main {
+            max-width: 1150px;
+            margin: auto;
+            padding: 0 25px;
+        }
+
+        section {
+            padding: 90px 0;
+            scroll-margin-top: 70px;
+        }
+
+        .section-title {
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 30px;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+
+        .section-title h2::after {
+            content: "";
+            display: block;
+            width: 45px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        .section-title p {
+            color: #64748b;
+        }
+
+        /* =========================
+           PRESENTATION
+        ========================= */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 100px;
+        }
+
+        .hero-content {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .hero-text .small-title {
+            color: var(--primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(42px, 6vw, 72px);
+            line-height: 1.05;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+
+        .hero-text h1 span {
+            color: var(--primary);
+        }
+
+        .hero-text h3 {
+            font-size: 22px;
+            color: #475569;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            max-width: 650px;
+            color: #64748b;
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 22px;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--border);
+            background: white;
+            color: var(--dark);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .profile-card {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: #dbeafe;
+            margin: 0 auto 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--primary);
+            font-size: 55px;
+            font-weight: bold;
+        }
+
+        .contact-list {
+            list-style: none;
+        }
+
+        .contact-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+            color: var(--text);
+            font-size: 14px;
+        }
+
+        .contact-list li:last-child {
+            border-bottom: none;
+        }
+
+        .contact-list strong {
+            color: var(--dark);
+        }
+
+        /* =========================
+           CARDS
+        ========================= */
+        .card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+        }
+
+        /* =========================
+           OBJECTIF
+        ========================= */
+        .objective {
+            background: var(--dark);
+            color: white;
+            border-radius: 20px;
+            padding: 45px;
+        }
+
+        .objective h3 {
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .objective p {
+            color: #cbd5e1;
+            max-width: 900px;
+        }
+
+        /* =========================
+           TIMELINE
+        ========================= */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin-left: 10px;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #bfdbfe;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 35px;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 7px;
+            width: 17px;
+            height: 17px;
+            background: var(--primary);
+            border: 4px solid #dbeafe;
+            border-radius: 50%;
+        }
+
+        .timeline-item h3 {
+            color: var(--dark);
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .timeline-item .date {
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .timeline-item p {
+            color: #64748b;
+        }
+
+        /* =========================
+           COMPETENCES
+        ========================= */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 18px;
+            color: var(--dark);
+        }
+
+        .skill {
+            margin-bottom: 17px;
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            margin-bottom: 7px;
+        }
+
+        .skill-header span:last-child {
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .progress {
+            width: 100%;
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: var(--primary);
+            border-radius: 10px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background: #eff6ff;
+            color: #1d4ed8;
+            border: 1px solid #dbeafe;
+            padding: 7px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* =========================
+           LANGUES
+        ========================= */
+        .languages {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .language {
+            background: white;
+            padding: 25px;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .language h3 {
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+
+        .language p {
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+        footer {
+            background: var(--dark);
+            color: #94a3b8;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        /* =========================
+           ANIMATION
+        ========================= */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+        @media (max-width: 800px) {
+
+            .menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 65px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                gap: 0;
+                display: none;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                border-top: 1px solid var(--border);
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 15px 25px;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero {
+                padding-top: 120px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .languages {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 70px 0;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            main {
+                padding: 0 18px;
+            }
+
+            nav {
+                padding: 14px 18px;
+            }
+
+            .hero-text h1 {
+                font-size: 45px;
+            }
+
+            .objective {
+                padding: 28px 22px;
+            }
+
+            .profile-card {
+                padding: 25px 20px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="#presentation" class="logo">
+                <span>CV recherche stage</span>
+            </a>
+
+            <button class="menu-btn" id="menuBtn" aria-label="Ouvrir le menu">
+                ☰
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#presentation">Présentation</a></li>
+                <li><a href="#objectif">Objectif</a></li>
+                <li><a href="#formation">Formation</a></li>
+                <li><a href="#experience">Expérience</a></li>
+                <li><a href="#competences">Compétences</a></li>
+                <li><a href="#langues">Langues</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main>
+
+
+        <section id="presentation" class="hero">
+            <div class="hero-content">
+
+                <div class="hero-text fade-in">
+                    <div class="small-title">
+                        Recherche de stage
+                    </div>
+
+                    <h1>
+                        <span>Naël</span><br>
+                        RACINE
+                    </h1>
+
+                    <h3>
+                        Étudiant en Réseaux & Systèmes Informatiques
+                    </h3>
+
+                    <p>
+                        Étudiant passionné par les réseaux et les systèmes informatiques, je suis motivé, sérieux et curieux. Je recherche un stage du 31 mai au 30 juin 2027 en informatique orienté réseaux et systèmes au sein d’une entreprise afin de développer mes compétences techniques à travers un stage en entreprise et découvrir concrètement le fonctionnement des infrastructures réseau. J’aime apprendre, résoudre des problèmes et travailler en équipe.
+                    </p>
+
+                    <div class="buttons">
+                        <a href="#objectif" class="btn btn-primary">
+                            Découvrir mon profil
+                        </a>
+
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nael.racine24@gmail.com" target="_blank"
+                           class="btn btn-secondary">
+                            Me contacter
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="profile-card fade-in">
+
+                    
+                    <div class="profile-photo">
+                        NR
+                    </div>
+
+                    <ul class="contact-list">
+                        <li>
+                            <strong>📍 Ville :</strong>
+                            Amiens 80000
+                        </li>
+
+                        <li>
+                            <strong>📞 Téléphone :</strong>
+                            +33 7 66 66 53 55
+                        </li>
+
+                        <li>
+                            <strong>✉️ Email :</strong>
+                            nael.racine24@gmail.com
+                        </li>
+
+                        <li>
+                            <strong>🎓 Statut :</strong>
+                            Étudiant
+                        </li>
+
+                        <li>
+                            <strong>💼 Recherche :</strong>
+                            Stage en réseaux informatiques
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <section id="objectif">
+
+            <div class="section-title fade-in">
+                <h2>A propos de moi</h2>
+                <p>Mes activités</p>
+            </div>
+
+            <div class="objective fade-in">
+
+                <p>
+					L’informatique occupe depuis toujours une place importante dans ma vie. J’apprécie particulièrement les environnements qui nécessitent réflexion, 
+					analyse et prise de décision, qu’il s’agisse de sécuriser une infrastructure informatique ou de manager une équipe dans un jeu vidéo compétitif. J’aime relever des problématiques complexes, 
+					seul comme en équipe, et maintenir un haut niveau de concentration pendant plusieurs heures, à l’image de l’engagement et de la stratégie nécessaires dans une compétition de golf auquelle je peux participer.
+                </p>
+
+                <br>
+
+                <p>
+                    Sérieux, curieux et motivé, je suis prêt à apprendre de
+                    nouvelles technologies et à travailler en équipe sur des
+                    projets concrets.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <section id="formation">
+
+            <div class="section-title fade-in">
+                <h2>Formation</h2>
+                <p>Mon parcours scolaire et académique</p>
+            </div>
+
+            <div class="timeline">
+
+                <div class="timeline-item fade-in">
+                    <div class="date">
+                        2026 — 2028
+                    </div>
+
+                    <h3>
+                        BTS SIO 
+                    </h3>
+
+                    <p>
+                        Saint Rémi — Amiens
+                    </p>
+
+                    <p>
+                        Formation orientée réseaux, systèmes, administration
+                        informatique et cybersécurité. Option SISR
+                    </p>
+                </div>
+
+
+                <div class="timeline-item fade-in">
+                    
+
+                    <h3>
+                        Formation open classroom
+                    </h3>
+
+                    <p>
+                        création d'un site web
+                    </p>
+                </div>
+
+
+                <div class="timeline-item fade-in">
+                    <div class="date">
+                        2024
+                    </div>
+
+                    <h3>
+                        Baccalauréat
+                    </h3>
+
+                    <p>
+                        Lycée sainte famille — Amiens
+                    </p>
+
+                    <p>
+                        Spécialités : Mathématiques, NSI
+                        Option : maths experte, musique
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="experience">
+
+            <div class="section-title fade-in">
+                <h2>Expérience</h2>
+                <p>Mes expériences professionnelles et projets</p>
+            </div>
+
+            <div class="timeline">
+				<div class="timeline-item fade-in">
+
+                    <div class="date">
+                        Septembre 2026 - Aujourd'hui
+                    </div>
+
+                    <h3>
+                        Manager équipe League Of Legends - DIV 3
+                    </h3>
+
+                    <p>
+                        FGE - French Gaming E-sport
+                    </p>
+
+                    <p>
+                        Gestion et coordination de l’activité de l’équipe : 
+						élaboration et suivi des plannings, organisation et coordination des entraînements, 
+						participation au recrutement des joueurs et veille au bon suivi et à la cohésion de l’équipe.
+                    </p>
+
+                </div>
+
+                <div class="timeline-item fade-in">
+
+                    <div class="date">
+                        10 Juin 2024 — 21 Juin 2024
+                    </div>
+
+                    <h3>
+                        Stage en tant qu'exposant
+                    </h3>
+
+                    <p>
+                        Mulhouse Gaming  — Mulhouse
+                    </p>
+
+                    <p>
+                        Participation à l'installation système réseau d'un parc informatique
+                        en physique lors de la Geek Unchained et maintien de la structure opérationnel
+                    </p>
+
+                </div>
+
+
+                <div class="timeline-item fade-in">
+
+                    <div class="date">
+                        2 semaines 2023
+                    </div>
+
+                    <h3>
+                        Stage d'observation
+                    </h3>
+
+                    <p>
+                        CROUS
+                    </p>
+
+                    <p>
+                        Aide à l'organisation de câbles dans un data center
+                    </p>
+
+                </div>
+
+
+                
+
+            </div>
+
+        </section>
+
+
+
+<section id="competences">
+
+    <div class="section-title fade-in">
+        <h2>Compétences</h2>
+        <p>Mes compétences techniques et professionnelles</p>
+    </div>
+
+    <div class="competences-grid">
+
+        
+        <div class="competence-card fade-in">
+            <h3>🌐 Réseaux informatiques</h3>
+
+            <ul>
+                <li>Configuration d'adresses IP</li>
+                <li>Protocole TCP/IP</li>
+                <li>Routage</li>
+                <li>Notions de sécurité réseau</li>
+                <li>Diagnostic et dépannage réseau</li>
+            </ul>
+        </div>
+
+        
+        <div class="competence-card fade-in">
+            <h3>💻 Systèmes</h3>
+
+            <ul>
+                <li>Windows</li>
+                <li>Linux</li>
+                <li>Installation et configuration de postes</li>
+                <li>Administration système de base</li>
+                <li>Gestion des utilisateurs</li>
+                <li>Gestion des permissions sous linux</li>
+            </ul>
+        </div>
+
+        <div class="competence-card fade-in">
+            <h3>🛠️ Outils & technologies</h3>
+
+            <ul>
+                <li>VirtualBox</li>
+                <li>VMware</li>
+                <li>HTML / CSS / JavaScript</li>
+                <li>Microsoft Office</li>
+            </ul>
+        </div>
+
+        
+        <div class="competence-card fade-in">
+            <h3>⭐ Qualités</h3>
+
+            <ul>
+                <li>Curieux et motivé</li>
+                <li>Esprit d'équipe</li>
+                <li>Autonome</li>
+                <li>Rigoureux</li>
+                <li>Organisé</li>
+                <li>Esprit d'analyse</li>
+            </ul>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="competences">
+
+    <div class="section-title fade-in">
+        <h2>Projets</h2>
+        <p>Quelques projets effectué</p>
+    </div>
+
+    <div class="competences-grid">
+
+        
+        <div class="competence-card fade-in">
+            <h3>liste projets</h3>
+
+            <ul>
+                <li><a href="prompteur.html" target="_blank">prompteur</li>
+                <li><a href="Video_explicative_micro_cravate_DJI.mp4" target="_blank">vidéo explicative pour micro DJI</li>
+            </ul>
+        </div>       
+    </div>
+
+</section>
+
+
+      
+        <section id="langues">
+
+            <div class="section-title fade-in">
+                <h2>Langues</h2>
+                <p>Mes compétences linguistiques</p>
+            </div>
+
+
+            <div class="languages">
+
+                <div class="language fade-in">
+                    <h3>🇫🇷 Français</h3>
+                    <p>Langue maternelle</p>
+                </div>
+
+                <div class="language fade-in">
+                    <h3>🇬🇧 Anglais</h3>
+                    <p>Niveau B1+ certifié</p>
+                </div>
+
+                
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    
+    <footer>
+
+        <p>
+            © <span id="year"></span>
+            <strong>Racine Naël</strong>
+            — CV Réseaux Informatiques
+        </p>
+
+    </footer>
+
+
+    
+    <script>
+
+        // Menu mobile
+        const menuBtn = document.getElementById("menuBtn");
+        const navLinks = document.getElementById("navLinks");
+
+        menuBtn.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+
+            if (navLinks.classList.contains("active")) {
+                menuBtn.textContent = "✕";
+            } else {
+                menuBtn.textContent = "☰";
+            }
+        });
+
+
+        // Fermer le menu après avoir cliqué sur un lien
+        document.querySelectorAll(".nav-links a").forEach(link => {
+
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("active");
+                menuBtn.textContent = "☰";
+            });
+
+        });
+
+
+        // Année automatique dans le footer
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+
+        // Animation au défilement
+        const observer = new IntersectionObserver(
+            (entries) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.15
+            }
+        );
+
+
+        document.querySelectorAll(".fade-in").forEach(element => {
+            observer.observe(element);
+        });
+
+    </script>
+
+</body>
+</html>
